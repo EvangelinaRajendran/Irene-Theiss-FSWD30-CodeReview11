@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 	console.log("ready");
-	$('#select-offices').on('change', function() {
+	$('.car-select').on('change', function() {
 		var filter = $(this).val();
 		var field = $(this).attr('name');
 		//console.log(field);
@@ -13,7 +13,8 @@ jQuery(document).ready(function($) {
         }
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-				console.log(this.responseText);
+				//console.log(this.responseText);
+				//insert response into accordion element
                 document.getElementById("accordion").innerHTML = this.responseText;
             }
         };

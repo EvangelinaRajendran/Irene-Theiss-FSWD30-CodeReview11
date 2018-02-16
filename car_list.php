@@ -15,13 +15,14 @@ $offices->officeList = $offices->getOffices();
   		<div class="col-lg-8 col-md-8 col-sm-12 car-container">
   			<div class="filter">
 		  		<form >
-		  			<select name="office_name" id="select-offices">
+		  			<select name="office_name" id="select-offices" class="car-select">
 		  				<option value="All">All</option>
 		  				<?php foreach ($offices->officeList as $value): ?>
 		  					<option value="<?php echo $value->officeName;?>"><?php echo $value->officeName;?></option>
 		  				<?php endforeach ?>
 		  			</select>
 		  		</form>
+		  		
 		  	</div>
   			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
   				<?php echo $cars->displayCars();?>

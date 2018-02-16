@@ -20,7 +20,7 @@ FROM car
     JOIN brand ON car.fk_brand_id = brand.id
 ORDER BY car.id;
 
--- SELECT * FROM getCarsWithLocation WHERE office_name IS NULL;
+SELECT * FROM getCarsWithLocation WHERE brandname = 'BMW';
 
 -- number of available cars at offices
 CREATE VIEW getCarCountAndOffices AS
