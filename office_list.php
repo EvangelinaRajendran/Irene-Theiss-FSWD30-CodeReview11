@@ -9,7 +9,7 @@ $offices->officeList = $offices->getOffices();
 <div class="container pad-cont">
 	<div class="row">
 		<div class="col-md-2 hidden-xs"></div>
-  		<div class="col-lg-8 col-md-8 col-sm-12">
+  		<div class="col-lg-8 col-md-8 col-sm-12 office-container">
   			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
   				<?php foreach ($offices->officeList as $value): ?>
 					<div class="panel panel-default">
