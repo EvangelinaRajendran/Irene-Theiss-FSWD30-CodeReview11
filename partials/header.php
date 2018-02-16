@@ -2,6 +2,8 @@
 <?php require_once "lib/db_config.php";?>
 <?php include_once "lib/Office.php";
 	  include_once "lib/OfficeList.php";
+	  include_once "lib/Car.php";
+	  include_once "lib/CarList.php";
 ?>
 <!DOCTYPE html>
 <html>
