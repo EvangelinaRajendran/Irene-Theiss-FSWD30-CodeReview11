@@ -5,10 +5,15 @@ class CarList {
 	public function getCars($field = null, $filter = null) {
 		$connection = openConnection();
 		$sql = "SELECT * FROM getCarsWithLocation";
-		if ($filter !== null) {
+		if ($filter !== null && $filter !== "All") {
 			$sql .= " WHERE $field = ?";
 		} 
 		if($stmt = $connection->prepare($sql)){
+			if ($filter !== null && $filter !== "All") {
+				 $stmt->bind_param("s", $param_name);
+            	// Set parameters
+            	$param_name = $filter;
+			}
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 /// Store result
@@ -31,6 +36,46 @@ class CarList {
         	} 
     	}
     	return $this->carList;
+	}
+
+	public function displayCars() {
+		ob_start();
+		foreach ($this->carList as $value) {
+		?>
+		<div class="panel panel-default">
+		   	<div class="panel-heading">
+	   			<h4 class="panel-title">
+		        	<?php echo $value->brand . " | " . $value->cartype;?>
+		        		<?php if ($value->office !== null): ?>
+		        			<label class="label label-info">Available</label>
+		        		<?php else: ?>
+		        			<label class="label label-warning">On the road</label>
+		        		<?php endif ?>
+		        		<label class="label label-primary pull-right"><?php echo $value->pricePerDay . " €/Day";?></label>
+		        	<a href="#" class="" data-toggle="collapse" data-target="#collapsible-<?php echo $value->id;?>" data-parent="#myAccordion"> More
+		        		<span class=""><i class="fas fa-caret-down"></i></span>
+			        </a>
+			   	</h4>
+		   	</div>
+	        <div id="collapsible-<?php echo $value->id;?>" class="collapse">
+	        	<div class="panel-body">
+	        		<div class="col-xs-6">
+	        			<span class="badge"><?php echo $value->ps . " PS";?></span>
+		        		<span class="badge"><?php echo $value->circuit;?></span>
+		        		<span class="badge"><i class="far fa-snowflake"></i><?php echo $value->aircondition;?></span>
+		        		<span class="badge"><?php echo $value->numSeats . " | " . $value->numDoors;?></span>
+	        		</div>
+	        		<div class="col-xs-6">
+	        			<?php echo $value->office;?><br>
+	        			<?php echo $value->coordinates;?><br>
+	        		</div>
+	        	</div>
+	        </div>
+	    </div>
+		<?php }
+		$content = ob_get_contents();
+		ob_get_clean();
+		return $content;
 	}
 }
 ?>
