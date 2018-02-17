@@ -8,6 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><?php if(isset($pagename)) {echo $pagename;} else {echo "Car Rental";};?></title>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Kanit:400,400i,600,600i,900,900i" rel="stylesheet">
 	<link rel="stylesheet" href="css/normalize.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">

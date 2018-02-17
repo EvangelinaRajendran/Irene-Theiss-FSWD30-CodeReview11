@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="index.php">
-        <span><i class="fa fa-car"></i>Car Rental</span>
+        <span><i class="fas fa-bullseye"></i> Car Rental</span>
       </a>
       <?php if (isset($_SESSION['username'])) : ?>
         <a class="navbar-brand" href="logout.php">
@@ -18,7 +18,7 @@
       <?php endif ?>
       <?php if (!isset($_SESSION['username'])) : ?>
         <a class="navbar-brand" href="login-form.php">
-          <span>Login</span>
+          <!-- <span>Login</span> -->
         </a>
       <?php endif ?>
     </div>
