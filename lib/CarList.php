@@ -46,16 +46,16 @@ class CarList {
 		   	<div class="panel-heading">
 	   			<h4 class="panel-title">
 		        	<?php echo $value->brand . " | " . $value->cartype;?>
-		        		<?php if ($value->office !== null): ?>
-		        			<label class="label label-info">Available</label>
-		        		<?php else: ?>
-		        			<label class="label label-warning">On the road</label>
-		        		<?php endif ?>
-		        		<label class="label label-primary pull-right"><?php echo $value->pricePerDay . " €/Day";?></label>
-		        	<a href="#" class="" data-toggle="collapse" data-target="#collapsible-<?php echo $value->id;?>" data-parent="#myAccordion"> More
-		        		<span class=""><i class="fas fa-caret-down"></i></span>
-			        </a>
 			   	</h4>
+			   	<?php if ($value->office !== null): ?>
+        			<label class="label label-info">Available</label>
+	        		<?php else: ?>
+	        			<label class="label label-warning">On the road</label>
+        		<?php endif ?>
+        		<label class="label label-primary pull-right"><?php echo $value->pricePerDay . " €/Day";?></label>
+	        	<a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#collapsible-<?php echo $value->id;?>" data-parent="#myAccordion"> More
+	        		
+		        </a>
 		   	</div>
 	        <div id="collapsible-<?php echo $value->id;?>" class="collapse">
 	        	<div class="panel-body">
@@ -72,6 +72,7 @@ class CarList {
 	        	</div>
 	        </div>
 	    </div>
+
 		<?php }
 		$content = ob_get_contents();
 		ob_get_clean();

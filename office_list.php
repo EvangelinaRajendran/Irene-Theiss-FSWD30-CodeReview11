@@ -21,7 +21,7 @@ $offices->officeList = $offices->getOffices();
 						        		<i class="fas fa-car"></i>
 						        		<span class="badge"><?php echo $value->carcount;?></span>
 						        	</label>
-						        	<span class="pull-right"><i class="fas fa-caret-down"></i></span>
+						        	<span class="pull-right"><i class="fas fa-chevron-down"></i></span>
 						        </a>
 						   	</h4>
 					   	</div>
