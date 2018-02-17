@@ -52,20 +52,19 @@ class CarList {
 	   			<h4 class="panel-title">
 		        	<?php echo $value->brand . " | " . $value->cartype;?>
 			   	</h4>
-        		<label class="label label-primary pull-right"><?php echo number_format($value->pricePerDay, 2) . " € |";?><sup> day</sup></label>
+        		<label class="label label-primary pull-right"><?php echo number_format($value->pricePerDay, 2) . " €";?><sup> /day</sup></label>
 	        	<span class="btn btn-primary" data-toggle="collapse" data-target="#collapsible-<?php echo $value->id;?>" data-parent="#accordion"> More Information
 		        </span>
 		   	</div>
 	        <div id="collapsible-<?php echo $value->id;?>" class="collapse">
 	        	<div class="panel-body">
 	        		<div class="col-xs-12 car-features">
-	        			<span class="badge"><?php echo $value->ps . " PS";?></span>
-		        		<span class="badge"><?php echo $value->circuit;?></span>
+	        			<span class="badge"><i class="fas fa-chess-knight"></i> <?php echo $value->ps . " PS";?></span>
+		        		<span class="badge"><i class="fas fa-cog"></i> <?php echo ucfirst($value->circuit) . " Circuit";?></span>
 		        		<?php if ($value->aircondition == "true"): ?>
 		        			<span class="badge"><i class="far fa-snowflake"></i> Air Condition</span>
 		        		<?php endif ?>
-		        		<span class="badge"><?php echo $value->numSeats;?></span>
-		        		<span class="badge"><?php echo $value->numDoors;?></span>
+		        		<span class="badge"><i class="fas fa-male"></i> <?php echo $value->numSeats . " Passengers";?></span>
 	        		</div>
 	        		<div class="col-xs-12 no-pad">
 	        			<p>Google Map doesn't work after filtering list via ajax - can't figure out how to fix this ... help ... </p>
