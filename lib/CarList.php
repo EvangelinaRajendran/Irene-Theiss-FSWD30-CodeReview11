@@ -44,27 +44,31 @@ class CarList {
 		?>
 		<div class="panel panel-default">
 		   	<div class="panel-heading">
+	   			<?php if ($value->office !== null): ?>
+        			<label class="label label-info">Available at <?php echo $value->office;?></label>
+        		<?php else: ?>
+        			<label class="label label-warning">On the road</label>
+        		<?php endif ?>
 	   			<h4 class="panel-title">
 		        	<?php echo $value->brand . " | " . $value->cartype;?>
-		        	<?php if ($value->office !== null): ?>
-	        			<label class="label label-info">Available</label>
-		        		<?php else: ?>
-		        			<label class="label label-warning">On the road</label>
-	        		<?php endif ?>
 			   	</h4>
-        		<label class="label label-primary pull-right"><?php echo number_format($value->pricePerDay, 2) . " €";?><sup> /day</sup></label>
+        		<label class="label label-primary pull-right"><?php echo number_format($value->pricePerDay, 2) . " € |";?><sup> day</sup></label>
 	        	<a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#collapsible-<?php echo $value->id;?>" data-parent="#myAccordion"> More
 		        </a>
 		   	</div>
 	        <div id="collapsible-<?php echo $value->id;?>" class="collapse">
 	        	<div class="panel-body">
-	        		<div class="col-xs-4">
+	        		<div class="col-xs-12 car-features">
 	        			<span class="badge"><?php echo $value->ps . " PS";?></span>
 		        		<span class="badge"><?php echo $value->circuit;?></span>
-		        		<span class="badge"><i class="far fa-snowflake"></i><?php echo $value->aircondition;?></span>
-		        		<span class="badge"><?php echo $value->numSeats . " | " . $value->numDoors;?></span>
+		        		<?php if ($value->aircondition == "true"): ?>
+		        			<span class="badge"><i class="far fa-snowflake"></i><?php echo $value->aircondition;?></span>
+		        		<?php endif ?>
+		        		<span class="badge"><?php echo $value->numSeats;?></span>
+		        		<span class="badge"><?php echo $value->numDoors;?></span>
 	        		</div>
-	        		<div class="col-xs-8">
+	        		<div class="col-xs-12 no-pad">
+	        			<p>Google Map doesn't work after filtering list via ajax - can't figure out how to fix this ... help ... </p>
 	        			<div class="map-container" id="map-<?php echo $value->id;?>">
 	        			</div>
 	        		</div>

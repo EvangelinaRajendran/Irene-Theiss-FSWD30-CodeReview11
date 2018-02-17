@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
 				//insert response into accordion element
                 document.getElementById("accordion").innerHTML = this.responseText;
                 //setTimeout(initCarMaps, 5000);
-        		//initCarMaps();
+        		initCarMaps(); //error here
             }
         };
         xmlhttp.open("GET","filter_cars.php?q=" + filter + "&f=" + field, true);
