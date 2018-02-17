@@ -88,8 +88,8 @@ header {
     font-style: italic;
     border-radius: 0;
     position: absolute;
-    margin-left: 10px;
-    margin-top: 0px;
+    margin-left: 0px;
+    margin-top: 35px;
     padding: 5px 10px;
     color: #fff; }
   .panel.panel-default .label-info {
@@ -112,6 +112,19 @@ header {
     .panel.panel-default .label.label-primary sup {
       top: -0.7em;
       font-size: 58%; }
+  .panel.panel-default .car-features {
+    padding: 20px 0; }
+    .panel.panel-default .car-features .badge {
+      border-radius: 0;
+      background-color: #fff;
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: #484545; }
+
+.no-pad {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
 
 #officeMap {
   height: 500px;
