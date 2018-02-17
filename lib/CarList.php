@@ -53,8 +53,8 @@ class CarList {
 		        	<?php echo $value->brand . " | " . $value->cartype;?>
 			   	</h4>
         		<label class="label label-primary pull-right"><?php echo number_format($value->pricePerDay, 2) . " € |";?><sup> day</sup></label>
-	        	<a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#collapsible-<?php echo $value->id;?>" data-parent="#myAccordion"> More
-		        </a>
+	        	<span class="btn btn-primary" data-toggle="collapse" data-target="#collapsible-<?php echo $value->id;?>" data-parent="#accordion"> More Information
+		        </span>
 		   	</div>
 	        <div id="collapsible-<?php echo $value->id;?>" class="collapse">
 	        	<div class="panel-body">
@@ -62,7 +62,7 @@ class CarList {
 	        			<span class="badge"><?php echo $value->ps . " PS";?></span>
 		        		<span class="badge"><?php echo $value->circuit;?></span>
 		        		<?php if ($value->aircondition == "true"): ?>
-		        			<span class="badge"><i class="far fa-snowflake"></i><?php echo $value->aircondition;?></span>
+		        			<span class="badge"><i class="far fa-snowflake"></i> Air Condition</span>
 		        		<?php endif ?>
 		        		<span class="badge"><?php echo $value->numSeats;?></span>
 		        		<span class="badge"><?php echo $value->numDoors;?></span>

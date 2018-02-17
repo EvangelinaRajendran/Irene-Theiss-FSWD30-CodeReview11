@@ -32,6 +32,7 @@ $offices->officeList = $offices->getOffices();
 	</div><!--/.row -->
 </div><!--/.container -->
 <?php 
+	//info for google maps
 	$markerArray = array();
 	foreach ($cars->carList as $value) {
 		array_push($markerArray, $value->coordinates);
