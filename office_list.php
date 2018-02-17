@@ -29,7 +29,8 @@ $offices->officeList = $offices->getOffices();
 				        	<div class="panel-body">
 				        		<p>
 					        		<?php echo $value->address;?><br>
-					        		<?php echo $value->district;?>
+					        		<?php echo $value->district;?><br>
+					        		<?php echo $value->coordinates[0];?>
 					        	</p>
 				            	<p><i class="far fa-envelope"></i><?php echo $value->email;?></p>
 				            	<p><i class="fas fa-phone"></i><?php echo $value->phone;?></p>
@@ -38,10 +39,24 @@ $offices->officeList = $offices->getOffices();
 				   </div>
 				<?php endforeach ?>
   			</div>
+  			
   		</div><!--/content column -->
   		<div class="col-md-2 hidden-xs"></div>
 	</div><!--/.row -->
+	
 </div><!--/.container -->
+<div id="officeMap" class="">
+	<?php 
+	$markerArray = array();
+	foreach ($offices->officeList as $value) {
+		array_push($markerArray, $value->coordinates);
+	}
+	?>
+</div>
+<script type="text/javascript">
+	var markers = <?php echo json_encode($markerArray, JSON_HEX_TAG); ?>;
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFwG1pB9vREd5gevuDR_KOJeIxoon33t4" ></script>
 
 <?php include "partials/footer.php";?>
 
