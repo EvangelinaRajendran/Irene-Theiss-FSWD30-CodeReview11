@@ -67,7 +67,7 @@ class CarList {
 	        		</div>
 	        		<div class="col-xs-6">
 	        			<?php echo $value->office;?><br>
-	        			<?php echo $value->coordinates;?><br>
+	        			<?php //echo $value->coordinates;?><br>
 	        		</div>
 	        	</div>
 	        </div>
