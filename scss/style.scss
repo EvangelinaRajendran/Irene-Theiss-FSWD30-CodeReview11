@@ -1,16 +1,49 @@
+$fontFam: 'Kanit', sans-serif;
 $base-font-size: 14px;
 $letter-spacing-default: 1px;
-.italic {
-	font-style: italic;
-}
+$heavy: 900;
+$bold: 600;
+$regular: 400;
+$light: 300;
 
 /*colors*/
-$dark: #38352f;
-$pink: #E23D80;
+$dark: #484545;
+$blue: #1c4463;
+$green: #bfe20b;
+$white: #fff;
+$lightgray: #f5f5f5;
+
+$transition-default: all 0.6s ease;
 
 .pad-cont {
 	padding-top: 100px;
 	padding-bottom: 50px;
+}
+
+body {
+	font-family: $fontFam;
+	font-size: $base-font-size;
+	color: $dark;
+	font-weight: $regular;
+}
+
+.navbar-default {
+	background: $blue;
+	border-color: $white;
+	min-height: 65px;
+	.navbar-brand {
+		color: $white;
+		font-weight: $bold;
+		font-style: italic;
+		font-size: ($base-font-size * 2.5);
+		letter-spacing: $letter-spacing-default;
+		-webkit-transition: $transition-default;
+		transition: $transition-default;
+		&:hover {
+			color: $white;
+			opacity: .8;
+		}
+	}
 }
 
 header {
@@ -18,14 +51,52 @@ header {
 	background-image: url("../img/2016-Tesla-Model-X-P90D-front-three-quarter-in-motion.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: top center;
 }
 
-.panel-title {
-	a {
-		display: block;
+.panel-group {
+	margin-top: 40px;
+}
+
+.panel.panel-default {
+	border-radius: 0;
+	border-color: $white;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+    padding: 20px;
+    border-top: 7px double $white;
+    border-bottom: 7px double $white;
+    margin-bottom: 25px;
+    background-color: $lightgray;
+	.panel-heading {
+	    color: $dark;
+	    background-color: transparent;
+	    border-radius: 0;
+	    a {
+			display: block;
+		}
+		.btn-primary {
+		    background-color: $blue;
+		    border: 0;
+		    border: 4px double $white;
+		    color: $white;
+		    border-radius: 0;
+		    font-weight: $regular;
+		    margin-top: 20px;
+		    font-size: ($base-font-size + 2);
+		    width: 300px;
+		    margin-left: auto;
+		}
+	}
+	.panel-title {
+		font-size: ($base-font-size * 1.7);
+    	color: inherit;
+    	font-weight: $bold;
+    	font-style: italic;
+		
 	}
 }
+
 
 
 #officeMap {
