@@ -31,5 +31,13 @@ $offices->officeList = $offices->getOffices();
   		<div class="col-md-2 hidden-xs"></div>
 	</div><!--/.row -->
 </div><!--/.container -->
-
+<?php 
+	$markerArray = array();
+	foreach ($cars->carList as $value) {
+		array_push($markerArray, $value->coordinates);
+	}
+?>
+<script type="text/javascript">
+	var carmarkers = <?php echo json_encode($markerArray, JSON_HEX_TAG); ?>;
+</script>
 <?php include "partials/footer.php";?>
