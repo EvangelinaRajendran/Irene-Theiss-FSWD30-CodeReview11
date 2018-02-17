@@ -7,5 +7,6 @@ $filter = $_GET['q'];
 $field = $_GET['f'];
 $cars = new CarList();
 $cars->carList = $cars->getCars($field , $filter);
+//send filtered car list
 echo $cars->displayCars();
 ?>
