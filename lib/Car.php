@@ -29,7 +29,12 @@ class Car {
 		$this->brand = $brand;
 		$this->pricePerDay = $pricePerDay;
 		$this->office = $office;
-		$this->coordinates = $coordinates;
+		$this->coordinates = $this->getLongLat($coordinates);
+    }
+
+    public function getLongLat($coordinates) {
+        $temp = substr($coordinates,6,-1);
+        return explode(" ", $temp);
     }
 
 }
