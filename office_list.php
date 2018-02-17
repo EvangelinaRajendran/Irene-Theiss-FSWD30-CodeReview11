@@ -56,7 +56,7 @@ $offices->officeList = $offices->getOffices();
 <script type="text/javascript">
 	var markers = <?php echo json_encode($markerArray, JSON_HEX_TAG); ?>;
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFwG1pB9vREd5gevuDR_KOJeIxoon33t4" ></script>
+
 
 <?php include "partials/footer.php";?>
 
