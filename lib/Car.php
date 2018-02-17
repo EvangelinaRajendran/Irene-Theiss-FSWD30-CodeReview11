@@ -34,7 +34,9 @@ class Car {
 
     public function getLongLat($coordinates) {
         $temp = substr($coordinates,6,-1);
-        return explode(" ", $temp);
+        $temp = explode(" ", $temp);
+        array_push($temp, $this->office);
+        return $temp;
     }
 
 }

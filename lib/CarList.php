@@ -59,15 +59,15 @@ class CarList {
 		   	</div>
 	        <div id="collapsible-<?php echo $value->id;?>" class="collapse">
 	        	<div class="panel-body">
-	        		<div class="col-xs-6">
+	        		<div class="col-xs-4">
 	        			<span class="badge"><?php echo $value->ps . " PS";?></span>
 		        		<span class="badge"><?php echo $value->circuit;?></span>
 		        		<span class="badge"><i class="far fa-snowflake"></i><?php echo $value->aircondition;?></span>
 		        		<span class="badge"><?php echo $value->numSeats . " | " . $value->numDoors;?></span>
 	        		</div>
-	        		<div class="col-xs-6">
-	        			<?php echo $value->office;?><br>
-	        			<?php //echo $value->coordinates;?><br>
+	        		<div class="col-xs-8">
+	        			<div class="map-container" id="map-<?php echo $value->id;?>">
+	        			</div>
 	        		</div>
 	        	</div>
 	        </div>
