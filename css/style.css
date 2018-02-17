@@ -12,6 +12,7 @@ body {
 .navbar-default {
   background: #1c4463;
   border-color: #fff;
+  border-bottom: 4px double #fff;
   min-height: 65px; }
   .navbar-default .navbar-brand {
     color: #fff;
@@ -20,22 +21,35 @@ body {
     font-size: 35px;
     letter-spacing: 1px;
     -webkit-transition: all 0.6s ease;
-    transition: all 0.6s ease; }
-    .navbar-default .navbar-brand:hover {
+    transition: all 0.6s ease;
+    padding: 12px; }
+    .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
       color: #fff;
       opacity: .8; }
+  .navbar-default .navbar-nav li {
+    padding-top: 6px; }
+    .navbar-default .navbar-nav li a {
+      color: #fff;
+      font-weight: 300;
+      font-size: 16px; }
+      .navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a:focus {
+        color: #fff;
+        opacity: .8; }
 
 header {
   min-height: 100vh;
   background-image: url("../img/2016-Tesla-Model-X-P90D-front-three-quarter-in-motion.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center; }
+  background-position: top right;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
 
 .panel-group {
   margin-top: 40px; }
 
 .panel.panel-default {
+  position: relative;
   border-radius: 0;
   border-color: #fff;
   -webkit-box-shadow: none;
@@ -48,14 +62,15 @@ header {
   .panel.panel-default .panel-heading {
     color: #484545;
     background-color: transparent;
-    border-radius: 0; }
+    border-radius: 0;
+    padding-bottom: 0; }
     .panel.panel-default .panel-heading a {
       display: block; }
     .panel.panel-default .panel-heading .btn-primary {
-      background-color: #1c4463;
+      background-color: #fff;
       border: 0;
-      border: 4px double #fff;
-      color: #fff;
+      border: 4px double #1c4463;
+      color: #1c4463;
       border-radius: 0;
       font-weight: 400;
       margin-top: 20px;
@@ -67,11 +82,45 @@ header {
     color: inherit;
     font-weight: 600;
     font-style: italic; }
+  .panel.panel-default .label {
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    border-radius: 0;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 0px;
+    padding: 5px 10px;
+    color: #fff; }
+  .panel.panel-default .label-info {
+    background-color: #a6c117; }
+  .panel.panel-default .label-warning {
+    background-color: rgba(49, 64, 68, 0.7); }
+  .panel.panel-default .label.label-primary {
+    background-color: #a6c117;
+    color: #fff;
+    border-radius: 0;
+    font-size: 21px;
+    font-weight: 300;
+    font-style: italic;
+    position: absolute;
+    right: -15px;
+    margin-top: -50px;
+    border-bottom: 4px double #fff;
+    border-top: 4px double #fff;
+    width: 135px; }
+    .panel.panel-default .label.label-primary sup {
+      top: -0.7em;
+      font-size: 58%; }
 
 #officeMap {
-  height: 500px; }
+  height: 500px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
 
 .map-container {
-  height: 250px; }
+  height: 250px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
 
 /*# sourceMappingURL=style.css.map */
