@@ -58,4 +58,37 @@ jQuery(document).ready(function($) {
 		google.maps.event.addDomListener(window, "load", initMap);
     }
 
+    //individual car maps
+    //console.log(carmarkers);
+    function initCarMaps() {
+    	var maps = [];
+	  	var locations = carmarkers;
+	  	var wrappers = document.getElementsByClassName('map-container');
+
+	  	for (var i = 0; i < wrappers.length; i++) {
+
+	  		var latlng = {lat: parseFloat(locations[i][0]), lng: parseFloat(locations[i][1])};
+	  		//console.log(latlng);
+	  		var mapOptions = {
+	           center: latlng,
+	           scrollwheel: false,
+	           zoom: 12
+	       };
+	       var map = new google.maps.Map(document.getElementById('map-' + (i + 1)), mapOptions);
+       	   maps.push(map);
+       	   console.log(maps);
+       	   var marker = new google.maps.Marker({
+	          map: map,
+	          position: latlng,
+	          title: locations[i][0]
+	       });
+	  	}
+
+    }
+	//initialize car map only on car page
+    if( $('.map-container').length > 0) {
+		google.maps.event.addDomListener(window, "load", initCarMaps);
+		//initCarMaps();
+    }
+
 });
