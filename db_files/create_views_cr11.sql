@@ -18,7 +18,7 @@ FROM car
     LEFT JOIN branch_office ON location.id = branch_office.fk_location_id
 	JOIN model ON car.fk_model_id = model.id
     JOIN brand ON car.fk_brand_id = brand.id
-ORDER BY car.id;
+ORDER BY license_nr;
 
 SELECT * FROM getCarsWithLocation WHERE brandname = 'BMW';
 
