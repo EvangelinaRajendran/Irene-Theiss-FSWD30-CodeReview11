@@ -4,7 +4,7 @@
 /*colors*/
 .pad-cont {
   padding-top: 100px;
-  padding-bottom: 100px; }
+  padding-bottom: 50px; }
 
 header {
   min-height: 100vh;
@@ -15,5 +15,8 @@ header {
 
 .panel-title a {
   display: block; }
+
+#officeMap {
+  height: 500px; }
 
 /*# sourceMappingURL=style.css.map */
