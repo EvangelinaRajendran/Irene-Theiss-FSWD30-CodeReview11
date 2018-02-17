@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+	var map;
 	//ajax call for carlist filter
 	$('.car-select').on('change', function() {
 		var filter = $(this).val();
@@ -12,14 +13,17 @@ jQuery(document).ready(function($) {
         }
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-				//console.log(this.responseText);
+				//console.log(carmarkers);
 				//insert response into accordion element
                 document.getElementById("accordion").innerHTML = this.responseText;
+                //setTimeout(initCarMaps, 5000);
+        		//initCarMaps();
             }
         };
         xmlhttp.open("GET","filter_cars.php?q=" + filter + "&f=" + field, true);
         xmlhttp.send();
 	});
+
 
 	//Map for Office List Page
 	function initMap() {
@@ -71,14 +75,14 @@ jQuery(document).ready(function($) {
 	  	};
 	  	//append map to each car element
 	  	for (i = 0; i < wrappers.length; i++) {
-	  		var latlng = {lat: parseFloat(locations[i][0]), lng: parseFloat(locations[i][1])};
+	  		latlng = {lat: parseFloat(locations[i][0]), lng: parseFloat(locations[i][1])};
 	  		//console.log(latlng);
 	  		var mapOptions = {
 	           center: latlng,
 	           scrollwheel: true,
 	           zoom: 15
 	       };
-	       var map = new google.maps.Map(document.getElementById('map-' + (i + 1)), mapOptions);
+	       map = new google.maps.Map(document.getElementById('map-' + (i + 1)), mapOptions);
        	   var marker = new google.maps.Marker({
 	          map: map,
 	          position: latlng,
