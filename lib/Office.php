@@ -24,9 +24,16 @@ class Office {
     	$instance->phone = $phone;
     	$instance->address = $address;
     	$instance->district = $district;
-    	$instance->coordinates = $coordinates;
+    	$instance->coordinates = $instance->getLongLat($coordinates);
     	$instance->carcount = $carcount;
     	return $instance;
+    }
+
+    public function getLongLat($coordinates) {
+        $temp = substr($coordinates,6,-1);
+        $temp = explode(" ", $temp);
+        array_push($temp, $this->officeName);
+        return $temp;
     }
 
 }
