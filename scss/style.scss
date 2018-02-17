@@ -96,7 +96,7 @@ header {
 	    border-radius: 0;
 	    padding-bottom: 0;
 	    a {
-			display: block;
+			
 		}
 		.btn-primary {
 		    background-color: $white;
@@ -109,6 +109,7 @@ header {
 		    font-size: ($base-font-size + 2);
 		    width: 300px;
 		    margin-left: auto;
+		    display: block;
 		}
 	}
 	.panel-title {

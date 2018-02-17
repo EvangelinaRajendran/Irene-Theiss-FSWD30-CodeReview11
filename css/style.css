@@ -64,8 +64,6 @@ header {
     background-color: transparent;
     border-radius: 0;
     padding-bottom: 0; }
-    .panel.panel-default .panel-heading a {
-      display: block; }
     .panel.panel-default .panel-heading .btn-primary {
       background-color: #fff;
       border: 0;
@@ -76,7 +74,8 @@ header {
       margin-top: 20px;
       font-size: 16px;
       width: 300px;
-      margin-left: auto; }
+      margin-left: auto;
+      display: block; }
   .panel.panel-default .panel-title {
     font-size: 23.8px;
     color: inherit;
