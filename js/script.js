@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
       	'use strict';
 		var myCenter = new google.maps.LatLng(48.2089816, 16.3732133),
 		    mapCanvas = document.getElementById("officeMap"),
-		    mapOptions = {center: myCenter, zoom: 13},
+		    mapOptions = {center: myCenter, zoom: 13, scrollwheel: true},
 		    map = new google.maps.Map(mapCanvas, mapOptions);
 
 	  	var locations = markers;
