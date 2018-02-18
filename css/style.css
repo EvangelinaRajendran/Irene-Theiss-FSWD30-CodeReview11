@@ -20,8 +20,8 @@ body {
     font-style: italic;
     font-size: 35px;
     letter-spacing: 1px;
-    -webkit-transition: all 0.6s ease;
-    transition: all 0.6s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
     padding: 12px; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
       color: #fff;
@@ -83,7 +83,13 @@ header {
       font-size: 16px;
       width: 250px;
       margin-left: auto;
-      display: block; }
+      display: block;
+      -webkit-transition: all 0.4s ease;
+      transition: all 0.4s ease; }
+      .panel.panel-default .panel-heading .btn-primary:hover, .panel.panel-default .panel-heading .btn-primary.focus {
+        color: #fff;
+        border-color: #fff;
+        background-color: #1c4463; }
     .panel.panel-default .panel-heading .icon-down {
       font-size: 14px; }
   .panel.panel-default .panel-title {
