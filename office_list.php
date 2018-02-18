@@ -15,14 +15,14 @@ $offices->officeList = $offices->getOffices();
 					<div class="panel panel-default">
 					   	<div class="panel-heading">
 				   			<h4 class="panel-title">
-						   		<a href="#" class="" data-toggle="collapse" data-target="#collapsible-<?php echo $value->id;?>" data-parent="#myAccordion">
+						   		<span class="" data-toggle="collapse" data-target="#collapsible-<?php echo $value->id;?>" data-parent="#myAccordion">
 						        	<?php echo $value->officeName;?>
-						        	<label class="label label-info"> 
+						        	<label class="label label-info label-office" data-toggle="tooltip" data-placement="right" title="Available cars"> 
 						        		<i class="fas fa-car"></i>
 						        		<span class="badge"><?php echo $value->carcount;?></span>
 						        	</label>
-						        	<span class="pull-right"><i class="fas fa-chevron-down"></i></span>
-						        </a>
+						        	<span class="pull-right icon-down"><i class="fas fa-chevron-down"></i></span>
+						        </span>
 						   	</h4>
 					   	</div>
 				        <div id="collapsible-<?php echo $value->id;?>" class="collapse">
@@ -30,10 +30,9 @@ $offices->officeList = $offices->getOffices();
 				        		<p>
 					        		<?php echo $value->address;?><br>
 					        		<?php echo $value->district;?><br>
-					        		<?php echo $value->coordinates[0];?>
+					        		<i class="far fa-envelope"> </i> <?php echo $value->email;?><br>
+					        		<i class="fas fa-phone"> </i> <?php echo $value->phone;?>
 					        	</p>
-				            	<p><i class="far fa-envelope"></i><?php echo $value->email;?></p>
-				            	<p><i class="fas fa-phone"></i><?php echo $value->phone;?></p>
 				        	</div>
 				        </div>
 				   </div>
