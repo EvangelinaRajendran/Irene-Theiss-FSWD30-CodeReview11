@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
       	'use strict';
 		var myCenter = new google.maps.LatLng(48.2089816, 16.3732133),
 		    mapCanvas = document.getElementById("officeMap"),
-		    mapOptions = {center: myCenter, zoom: 13, scrollwheel: true},
+		    mapOptions = {center: myCenter, zoom: 13, scrollwheel: false},
 		    map = new google.maps.Map(mapCanvas, mapOptions);
 
 	  	var locations = markers;
@@ -100,5 +100,10 @@ jQuery(document).ready(function($) {
     if( $('.map-container').length > 0) {
 		google.maps.event.addDomListener(window, "load", initCarMaps);
     }
+
+    //initialize bootstrap tooltips
+    $(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
 
 });
