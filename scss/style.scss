@@ -122,12 +122,18 @@ header {
 		    margin-left: auto;
 		    display: block;
 		}
+		.icon-down {
+			font-size: $base-font-size;
+		}
 	}
 	.panel-title {
 		font-size: ($base-font-size * 1.7);
     	color: inherit;
     	font-weight: $bold;
     	font-style: italic;
+    	> span {
+    		cursor: pointer;
+    	}
 		
 	}
 	.label {
@@ -164,6 +170,30 @@ header {
 		    top: -0.7em;
 	        font-size: 58%;
     	}
+	}
+	.label.label-office {
+	    margin-top: -12px;
+	    position: absolute;
+	    margin-left: 20px;
+	    font-size: ($base-font-size + 4);
+	    border-radius: 100%;
+	    border: 4px double $white;
+	    padding: 10px 10px;
+	    .badge {
+    	    color: $dark;
+		    background-color: $white;
+		    font-weight: $light;
+		    position: absolute;
+		    top: -3px;
+	    }
+	}
+	.tooltip-inner {
+		background-color: $dark;
+		font-family: $fontFam;
+	}
+	.tooltip-arrow {
+		border-right-color: $dark;
+	
 	}
 	.car-features {
 		padding: 20px 0;

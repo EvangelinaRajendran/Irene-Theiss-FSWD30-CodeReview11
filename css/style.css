@@ -84,11 +84,15 @@ header {
       width: 250px;
       margin-left: auto;
       display: block; }
+    .panel.panel-default .panel-heading .icon-down {
+      font-size: 14px; }
   .panel.panel-default .panel-title {
     font-size: 23.8px;
     color: inherit;
     font-weight: 600;
     font-style: italic; }
+    .panel.panel-default .panel-title > span {
+      cursor: pointer; }
   .panel.panel-default .label {
     font-size: 14px;
     font-weight: 300;
@@ -119,6 +123,25 @@ header {
     .panel.panel-default .label.label-primary sup {
       top: -0.7em;
       font-size: 58%; }
+  .panel.panel-default .label.label-office {
+    margin-top: -12px;
+    position: absolute;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 100%;
+    border: 4px double #fff;
+    padding: 10px 10px; }
+    .panel.panel-default .label.label-office .badge {
+      color: #484545;
+      background-color: #fff;
+      font-weight: 300;
+      position: absolute;
+      top: -3px; }
+  .panel.panel-default .tooltip-inner {
+    background-color: #484545;
+    font-family: "Kanit", sans-serif; }
+  .panel.panel-default .tooltip-arrow {
+    border-right-color: #484545; }
   .panel.panel-default .car-features {
     padding: 20px 0; }
     .panel.panel-default .car-features .badge {
